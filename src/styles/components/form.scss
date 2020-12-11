@@ -1,0 +1,50 @@
+$light-green: rgb(45, 181, 37);
+$light-blue: rgb(39, 199, 109);
+
+.form {
+   background-color: rgb(31, 28, 47);
+   border-radius: 5px;
+   padding: 30px 0;
+   width: 500px;
+   box-shadow: -4px 4px 20px 3px rgba(15, 3, 68, 0.2);
+
+   .title-form {
+      color: rgb(231, 231, 231);
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+   }
+
+   .form-input {
+      padding: 40px 30px;
+      padding-bottom: 30px;
+
+      label {
+         color: rgb(230, 228, 228);
+         display: inline-block;
+         font-size: 20px;
+         padding: 20px 0;
+         width: 100%;
+
+         input {
+            background: none;
+            border: none;
+            border-bottom: 2px solid rgb(19, 86, 209);
+            font-size: 18px;
+            outline: none;
+            padding: 10px 0;
+            width: 100%;
+         }
+      }
+
+      button {
+         background-color: white;
+         border: none;
+         cursor: pointer;
+         font-size: 17px;
+         font-weight: 700;
+         padding: 10px 20px;
+      }
+   }
+}
