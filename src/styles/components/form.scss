@@ -35,16 +35,28 @@ $light-blue: rgb(39, 199, 109);
             outline: none;
             padding: 10px 0;
             width: 100%;
+            color: rgb(180, 180, 180);
          }
       }
+      .btn {
+         display: flex;
+         justify-content: space-between;
+         button {
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 10px 20px;
 
-      button {
-         background-color: white;
-         border: none;
-         cursor: pointer;
-         font-size: 17px;
-         font-weight: 700;
-         padding: 10px 20px;
+            &.desactive {
+               padding: 5px 10px;
+               font-size: 12px;
+               background: none;
+               color: white;
+               border: 1px solid white;
+            }
+         }
       }
    }
 }
