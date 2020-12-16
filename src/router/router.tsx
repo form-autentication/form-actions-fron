@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "../page";
 
 const ComponentRouter = () => {
