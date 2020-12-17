@@ -41,6 +41,7 @@ $light-blue: rgb(39, 199, 109);
       .btn {
          display: flex;
          justify-content: space-between;
+         align-items: center;
          button {
             background-color: white;
             border: none;
@@ -48,14 +49,15 @@ $light-blue: rgb(39, 199, 109);
             font-size: 17px;
             font-weight: 700;
             padding: 10px 20px;
+         }
 
-            &.desactive {
-               padding: 5px 10px;
-               font-size: 12px;
-               background: none;
-               color: white;
-               border: 1px solid white;
-            }
+         a {
+            padding: 5px 10px;
+            font-size: 12px;
+            background: none;
+            color: white;
+            border: 1px solid white;
+            text-decoration: none;
          }
       }
    }
