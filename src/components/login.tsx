@@ -7,7 +7,7 @@ const Login = () => {
    return (
       <div className="form">
          <h1 className="title-form">Login</h1>
-         <form action={`${urlBase}/login`} method="POST" className="form-input">
+         <form action={`${urlBase}/`} method="POST" className="form-input">
             <label htmlFor="">
                E-mail
                <input
