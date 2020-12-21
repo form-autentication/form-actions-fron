@@ -1,8 +1,8 @@
 import "./App.scss";
-import Router__ from "./router/router";
+import ComponentRouter from "./router/router";
 
 function App() {
-   return <Router__ />;
+   return <ComponentRouter />;
 }
 
 export default App;

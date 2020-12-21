@@ -1,5 +1,5 @@
-import { BaseSyntheticEvent, PointerEventHandler, useState } from "react";
-import { urlBase } from "../config/config";
+import React, { BaseSyntheticEvent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useFormFlag } from "../context/formFlag";
 import userServices from "../services/user.services";
 
@@ -14,6 +14,7 @@ const CreateAccount = () => {
 
    const handleChange = (event: BaseSyntheticEvent) => {
       const value = event.target.value;
+
       setCreateUser({
          ...createUser,
          [event.target.name]: value,
@@ -26,6 +27,8 @@ const CreateAccount = () => {
       userServices.userSerivcePost(createUser);
       console.log(createUser);
    };
+
+   useEffect(() => {}, []);
 
    return (
       <div className="form">
@@ -65,9 +68,9 @@ const CreateAccount = () => {
             </label>
             <div className="btn">
                <button type="submit">Create Account</button>
-               <a href="#" onClick={() => setFlag(!flag)}>
+               <Link to="/login" onClick={() => setFlag(!flag)}>
                   Login
-               </a>
+               </Link>
             </div>
          </form>
       </div>

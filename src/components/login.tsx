@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { urlBase } from "../config/config";
 import { useFormFlag } from "../context/formFlag";
 
@@ -26,9 +28,9 @@ const Login = () => {
             </label>
             <div className="btn">
                <button type="submit">Login</button>
-               <a href="#" onClick={() => setFlag(!flag)}>
+               <Link to="/create" onClick={() => setFlag(!flag)}>
                   Create Account
-               </a>
+               </Link>
             </div>
          </form>
       </div>

@@ -1,17 +1,33 @@
 import { useEffect } from "react";
-import { useFormFlag } from "../context/formFlag";
 import CreateAccount from "./createAccount";
 import Login from "./login";
-import Service from "../services/user.services";
+import { RouteComponentProps, useParams } from "react-router-dom";
+
+interface IForm {
+   slug: string;
+}
 
 const Form = () => {
-   const { flag } = useFormFlag();
+   let { slug } = useParams<IForm>();
 
-   useEffect(() => {
-      Service.userSerivceGet();
-   }, []);
+   const revertForm = ({ slug }: IForm) => {
+      switch (slug) {
+         case "login":
+            return <Login />;
+         case "create":
+            return <CreateAccount />;
+         default:
+            return <div>No existe ninguna Pagina</div>;
+      }
+   };
 
-   return <div>{flag ? <Login /> : <CreateAccount />}</div>;
+   return (
+      <div className="home">
+         <div className="container">
+            <div>{revertForm({ slug })}</div>
+         </div>
+      </div>
+   );
 };
 
 export default Form;
