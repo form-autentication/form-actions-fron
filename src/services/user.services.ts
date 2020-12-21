@@ -1,5 +1,4 @@
 import axios from "axios";
-import { clearScreenDown } from "readline";
 import { urlBase } from "../config/config";
 
 class UserService {
