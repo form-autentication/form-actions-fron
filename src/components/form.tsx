@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import CreateAccount from "./createAccount";
 import Login from "./login";
 import { RouteComponentProps, useParams } from "react-router-dom";
@@ -16,8 +15,8 @@ const Form = () => {
             return <Login />;
          case "create":
             return <CreateAccount />;
-         default:
-            return <div>No existe ninguna Pagina</div>;
+         // default:
+         //    return <div>No existe ninguna Pagina</div>;
       }
    };
 

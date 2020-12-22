@@ -4,13 +4,16 @@ import "bootstrap-container";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { FormFlagProvider } from "./context/formFlag";
+import { FormFlagProvider } from "./context/formFlag.context";
+import { UserDataProvider } from "./context/userData.context";
 
 ReactDOM.render(
    <React.StrictMode>
-      <FormFlagProvider>
-         <App />
-      </FormFlagProvider>
+      <UserDataProvider>
+         <FormFlagProvider>
+            <App />
+         </FormFlagProvider>
+      </UserDataProvider>
    </React.StrictMode>,
    document.getElementById("root")
 );
