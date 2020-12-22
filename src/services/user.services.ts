@@ -1,9 +1,8 @@
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { urlBase } from "../config/config";
 
 class UserService {
-   constructor() {}
-
    public userSerivceGet = () => {
       axios
          .get(`${urlBase}/`)
@@ -11,10 +10,12 @@ class UserService {
          .catch((error) => console.log(error));
    };
 
-   public userSerivcePost = (data: {}) => {
+   public userSerivcePost = (data: {}, endpoint: string) => {
       axios
-         .post(`${urlBase}/create`, data)
-         .then((res) => console.log(res.data))
+         .post(`${urlBase}/${endpoint}`, data)
+         .then((res) => {
+            console.log(res.data);
+         })
          .catch((error) => console.log(error));
    };
 }
