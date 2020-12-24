@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, createContext, useContext, useState } from "react";
-import userServices from "../services/user.services";
+import { userSerivcePost } from "../services/user.services";
 
 interface CreateUserI {
    name?: string;
@@ -28,7 +28,7 @@ export const UserDataProvider = ({ children }: any) => {
    const handleSubmit = (event: BaseSyntheticEvent, endpoint: string) => {
       event.preventDefault();
 
-      userServices.userSerivcePost(createUser, endpoint);
+      userSerivcePost(createUser, endpoint);
 
       console.log(createUser);
    };

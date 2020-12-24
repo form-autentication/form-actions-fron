@@ -14,7 +14,7 @@ const ComponentRouter = () => {
       <Router>
          <Switch>
             <Route path="/" exact>
-               <Redirect from="/" to="/login" />)
+               <Redirect from="/" to="/login" />
             </Route>
             <Route path="/:slug" exact>
                <Form />
