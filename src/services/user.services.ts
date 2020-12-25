@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { urlBase } from "../config/config";
 
 interface ServerData {
@@ -15,14 +14,12 @@ export const userSerivceGet = () => {
 };
 
 export const userSerivcePost = (data: {}, endpoint: string) => {
-   const [resData, setResData] = useState([]);
-
-   axios
+   let resdata = axios
       .post(`${urlBase}/${endpoint}`, data)
       .then((res) => {
-         let { mssg, flag }: ServerData = res.data;
-
-         console.log(`El mensage es ${mssg}, y el valor es ${flag}`);
+         return res.data;
       })
       .catch((error) => console.log(error));
+
+   return resdata;
 };

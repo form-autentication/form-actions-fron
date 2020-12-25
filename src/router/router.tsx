@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Form from "../components/form";
 import PageError from "../components/pageError";
+import { Profile } from "../page";
 // import { Home } from "../page";
 
 const ComponentRouter = () => {
@@ -18,6 +19,9 @@ const ComponentRouter = () => {
             </Route>
             <Route path="/:slug" exact>
                <Form />
+            </Route>
+            <Route path="/profile">
+               <Profile />
             </Route>
             <Route>
                <PageError />

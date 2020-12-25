@@ -1,5 +1,7 @@
 import { BaseSyntheticEvent, createContext, useContext, useState } from "react";
+import { Redirect } from "react-router-dom";
 import { userSerivcePost } from "../services/user.services";
+import moduleName from "module";
 
 interface CreateUserI {
    name?: string;
@@ -25,12 +27,20 @@ export const UserDataProvider = ({ children }: any) => {
       });
    };
 
-   const handleSubmit = (event: BaseSyntheticEvent, endpoint: string) => {
+   const handleSubmit = async (event: BaseSyntheticEvent, endpoint: string) => {
       event.preventDefault();
 
-      userSerivcePost(createUser, endpoint);
+      let { mssg, flag } = await userSerivcePost(createUser, endpoint);
 
       console.log(createUser);
+
+      console.log(`El mensage es ${mssg}, y el valor es ${flag}`);
+
+      if (endpoint == "login") {
+         if (flag) console.log("Si se puede logear");
+
+         console.log("No se puede logear");
+      }
    };
 
    return (
