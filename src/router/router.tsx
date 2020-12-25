@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Form from "../components/form";
 import PageError from "../components/pageError";
+import { Profile } from "../page";
 // import { Home } from "../page";
 
 const ComponentRouter = () => {
@@ -14,10 +15,13 @@ const ComponentRouter = () => {
       <Router>
          <Switch>
             <Route path="/" exact>
-               <Redirect from="/" to="/login" />)
+               <Redirect from="/" to="/login" />
             </Route>
             <Route path="/:slug" exact>
                <Form />
+            </Route>
+            <Route path="/profile">
+               <Profile />
             </Route>
             <Route>
                <PageError />
