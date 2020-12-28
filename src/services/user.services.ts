@@ -1,11 +1,6 @@
 import axios from "axios";
 import { urlBase } from "../config/config";
 
-interface ServerData {
-   mssg: string;
-   flag: boolean;
-}
-
 export const userSerivceGet = () => {
    axios
       .get(`${urlBase}/`)
