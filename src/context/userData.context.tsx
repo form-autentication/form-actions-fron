@@ -1,7 +1,6 @@
 import { BaseSyntheticEvent, createContext, useContext, useState } from "react";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { userSerivcePost } from "../services/user.services";
-import moduleName from "module";
 
 interface CreateUserI {
    name?: string;
@@ -34,12 +33,10 @@ export const UserDataProvider = ({ children }: any) => {
 
       console.log(createUser);
 
-      console.log(`El mensage es ${mssg}, y el valor es ${flag}`);
-
-      if (endpoint == "login") {
-         if (flag) console.log("Si se puede logear");
-
-         console.log("No se puede logear");
+      if (endpoint === "login") {
+         flag
+            ? console.log("Si se puede logear")
+            : console.log("No se puede logear");
       }
    };
 
