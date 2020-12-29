@@ -2,10 +2,12 @@ import axios from "axios";
 import { urlBase } from "../config/config";
 
 export const userSerivceGet = () => {
-   axios
-      .get(`${urlBase}/`)
-      .then((res) => console.log(res.data))
+   let data = axios
+      .get(`${urlBase}/profile`)
+      .then((res) => res.data)
       .catch((error) => console.log(error));
+
+   return data;
 };
 
 export const userSerivcePost = (data: {}, endpoint: string) => {

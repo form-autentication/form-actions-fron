@@ -6,27 +6,25 @@ import {
    Switch,
 } from "react-router-dom";
 import Form from "../components/form";
-import PageError from "../components/pageError";
 import { Profile } from "../page";
-// import { Home } from "../page";
 
 const ComponentRouter = () => {
    return (
       <Router>
          <Switch>
-            <Route path="/" exact>
-               <Redirect from="/" to="/login" />
+            <Route path="/profile">
+               <Profile />
             </Route>
             <Route path="/:slug" exact>
                <Form />
             </Route>
-            <Route path="/profile">
-               <Profile />
+            <Route path="/" exact>
+               <Redirect from="/" to="/login" />
             </Route>
-            <Route>
+            {/* <Route>
                <PageError />
             </Route>
-            <Route component={PageError} />
+            <Route component={PageError} /> */}
          </Switch>
       </Router>
    );
