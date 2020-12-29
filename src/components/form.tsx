@@ -1,6 +1,6 @@
 import CreateAccount from "./createAccount";
 import Login from "./login";
-import { RouteComponentProps, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface IForm {
    slug: string;
