@@ -1,23 +1,44 @@
+import { urlBase } from "@/config/config";
+// import { userSerivceGet } from "@/services/user.services";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { userSerivceGet } from "../services/user.services";
+
+interface DataUserI {
+   id: string;
+   name: string;
+   email: string;
+   password: string;
+}
 
 const Profile = () => {
-   const [dataUsers, setDataUsers] = useState([]);
+   const [dataUsers, setDataUsers] = useState<Array<DataUserI>>([]);
 
    useEffect(() => {
-      const getDataUser = () => {
-         userSerivceGet().then(async (res) => {
-            await setDataUsers(res.data);
-            await console.log(dataUsers);
-         });
+      const getDataUser = async () => {
+         let { data } = await axios(`${urlBase}/profile`);
+
+         console.log(
+            "🚀 ~ file: profile.tsx ~ line 12 ~ getDataUser ~ result",
+            data
+         );
+         setDataUsers(data);
       };
 
       getDataUser();
+      console.log(dataUsers);
    }, []);
 
    return (
       <div>
-         <div>Profile</div>
+         <h1>Profile</h1>
+         {dataUsers.map((res, i) => (
+            <div key={i}>
+               <h3>{res.name}</h3>
+               <p>{res.email}</p>
+               <p>{res.password}</p>
+               <br />
+            </div>
+         ))}
       </div>
    );
 };
