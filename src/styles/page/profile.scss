@@ -1,0 +1,31 @@
+.profile {
+   .table {
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+      border: 3px dashed purple;
+   }
+
+   thead th:nth-child(1) {
+      width: 5%;
+   }
+
+   thead th:nth-child(2) {
+      width: 10%;
+   }
+
+   thead th:nth-child(3) {
+      width: 10%;
+   }
+
+   thead th:nth-child(4) {
+      width: 10%;
+   }
+
+   th,
+   td {
+      padding: 20px;
+      text-align: center;
+      cursor: auto;
+   }
+}
