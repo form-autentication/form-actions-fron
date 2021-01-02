@@ -1,5 +1,6 @@
+import React from "react";
 import { BaseSyntheticEvent, createContext, useContext, useState } from "react";
-// import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { userSerivcePost } from "../services/user.services";
 
 interface CreateUserI {
@@ -11,6 +12,7 @@ interface CreateUserI {
 const UserDataContext = createContext({} as any);
 
 export const UserDataProvider = ({ children }: any) => {
+   let history = useHistory();
    const [createUser, setCreateUser] = useState<CreateUserI>({
       name: "",
       email: "",
@@ -34,6 +36,11 @@ export const UserDataProvider = ({ children }: any) => {
       console.log(createUser);
 
       if (endpoint === "login") {
+         //  if (flag) {
+         //     history.push("/profile");
+         //  } else {
+         //     console.log("No se puede logear");
+         //  }
          flag
             ? console.log("Si se puede logear")
             : console.log("No se puede logear");
@@ -53,5 +60,6 @@ export const useUserData = () => {
    const { createUser, setCreateUser, handleChange, handleSubmit } = useContext(
       UserDataContext
    );
+
    return { createUser, setCreateUser, handleChange, handleSubmit };
 };

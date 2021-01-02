@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useUserData } from "../context/userData.context";
 
@@ -22,7 +21,6 @@ const Login = () => {
                />
             </label>
             <label htmlFor="">
-               Password
                <input
                   type="password"
                   placeholder="**********"
